@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores, ejercicio 3</title>
+</head>
+
+<body class="container"
+    style="display: flex; flex-direction: row; justify-content:space-around;color: aliceblue;font-size: 20px;">
+
+
+    <div style="display: flex; flex-direction: column;">
+        <div id="div-1" style="width: 200px;height: 200px; background-color: blue; margin: 10px;">azul</div>
+
+        <div id="div-2" style="width: 200px;height: 200px; background-color: red;margin: 10px;">Rojo</div>
+
+        <div id="div-3" style="width: 200px;height: 200px; margin: 10px;background-color: green;">Verde</div>
+        
+        <div id="div-4" style="width: 200px;height: 200px; background-color: yellow;margin: 10px;">Amarillo</div>
+    </div>
+
+
+
+    <div style="display: flex; flex-direction: column;">
+
+        <div id="key" style="width: 200px; height: 200px;color: black; background-color: white;border: 2px solid black;margin: 10px;"> Teclas A, S y D</div>
+
+        <div id="key2" style="width: 200px; height: 200px;border: 2px solid black;margin: 10px; display: none;" ></div>
+
+    </div>
+    <script>
+        var d1 = document.querySelector('#div-1');
+        d1.addEventListener('click', function () {
+            if (d1.style.backgroundColor === 'blue') {
+                d1.style.backgroundColor = 'black';
+            } else {
+                d1.style.backgroundColor = 'blue';
+            }
+        });
+
+
+        var d2 = document.querySelector('#div-2');
+        d2.addEventListener('click', function () {
+            if (d2.style.backgroundColor === 'red') {
+                d2.style.backgroundColor = 'black';
+            } else {
+                d2.style.backgroundColor = 'red';
+            }
+        });
+
+
+        var d3 = document.querySelector('#div-3');
+        d3.addEventListener('click', function () {
+            if (d3.style.backgroundColor === 'green') {
+                d3.style.backgroundColor = 'black';
+            } else {
+                d3.style.backgroundColor = 'green';
+            }
+        });
+
+
+        var d4 = document.querySelector('#div-4');
+        d4.addEventListener('click', function (color) {
+            if (d4.style.backgroundColor === 'yellow') {
+                d4.style.backgroundColor = 'black';
+            } else {
+                d4.style.backgroundColor = 'yellow';
+            }
+        });
+
+        //div key
+
+        let colorSelect = "";
+
+        document.addEventListener('keydown', function (event) {
+            const dKey = document.getElementById('key2');
+
+            if (event.key === 'q') {
+                colorSelect = 'purple';
+                dKey.style.display = 'block'
+                dKey.style.backgroundColor = colorSelect; 
+            } else if (event.key === 'w') {
+                colorSelect = 'gray';
+                dKey.style.display = 'block';
+                dKey.style.backgroundColor = colorSelect; 
+            } else if (event.key === 'e') {
+                colorSelect = 'brown';
+                dKey.style.display = 'block';
+                dKey.style.backgroundColor = colorSelect; 
+            }
+        });
+    </script>
+</body>
+
+</html>
